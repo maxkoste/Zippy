@@ -1,1 +1,9 @@
-.DS_Store
+# Ignore build and generated files
+/build/
+/bin/
+/CMakeFiles/
+/CMakeCache.txt
+/Debian/
+/*.dSYM/
+
+.vscode/

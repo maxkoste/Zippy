@@ -1,0 +1,3 @@
+/Users/maxkoste/IdeaProjects/C_projects/Zippy/build/CMakeFiles/MyProject.dir
+/Users/maxkoste/IdeaProjects/C_projects/Zippy/build/CMakeFiles/edit_cache.dir
+/Users/maxkoste/IdeaProjects/C_projects/Zippy/build/CMakeFiles/rebuild_cache.dir

@@ -3,8 +3,14 @@
 #include <fstream>
 #include <map>
 #include <cctype>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
+
+bool compareFrequency(const pair<char, int>& a, const pair<char, int>& b){
+    return a.second > b.second;
+}
 
 void countLetterFrequency(const string& filePath){
 
@@ -29,8 +35,12 @@ void countLetterFrequency(const string& filePath){
 
     f.close();
 
+    vector<pair<char, int>> sortedVec(letterFrequency.begin(), letterFrequency.end());
+
+    sort(sortedVec.begin(), sortedVec.end(), compareFrequency);
+
     //print the amount of times the letter occurs to the terminal!
-    for(const auto& pair : letterFrequency){
+    for(const auto& pair : sortedVec){
         cout << pair.first << " " << pair.second << endl;
     }
 }

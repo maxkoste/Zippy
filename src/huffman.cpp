@@ -101,6 +101,17 @@ void deleteTree(Node* root){
     delete root;
 }
 
+//debugging purposes
+void printTree(Node* root, int level = 0) {
+    if (root == nullptr) return;
+    printTree(root->right, level + 1);
+    for (int i = 0; i < level; i++) {
+        cout << "    ";
+    }
+    cout << (root->data == '\0' ? "*" : string(1, root->data)) << " (" << root->frequency << ")" << endl;
+    printTree(root->left, level + 1);
+}
+
 int main(){
 
     string filePath = "../test.txt";
@@ -108,6 +119,8 @@ int main(){
     map<char, int> letterFrequency = countLetterFrequency(filePath);
 
     Node* root = buildHuffmanTree(letterFrequency);
+
+    printTree(root); //debugging purposes
 
     deleteTree(root);
     
